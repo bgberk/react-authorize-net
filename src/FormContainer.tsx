@@ -143,6 +143,7 @@ export default class FormContainer extends React.Component<Props, State> {
 
     return Accept.dispatchData(secureData)
       .then(response => {
+        console.log(response);
         this.setState({
           values: { cardCode: '', cardNumber: '', expDate: '' }
         })
@@ -152,6 +153,7 @@ export default class FormContainer extends React.Component<Props, State> {
         return response
       })
       .catch(response => {
+        console.log(response);
         this.setState({
           apiErrors: response.messages.message.map((err: any) => err.text)
         })
