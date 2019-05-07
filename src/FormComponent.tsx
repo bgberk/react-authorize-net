@@ -11,12 +11,12 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { FormType, InjectedProps } from './FormContainer'
 import Input, { Props } from './Input'
 
-import robotoFont from 'typeface-roboto/files/roboto-latin-400.woff2'
+import cutiveMono from 'https://fonts.googleapis.com/css?family=Cutive+Mono'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: "Roboto";
-    src: url(${robotoFont})
+    font-family: "Cutive";
+    src: url(${cutiveMono})
   }
 `
 const FormInput = styled(Input)(props => ({
@@ -27,10 +27,10 @@ const FormInput = styled(Input)(props => ({
     border: '0',
     padding: '0'
   },
-  backgroundColor: '#7795f8',
-  border: '1px solid #819efc',
-  borderRadius: '4px',
-  color: props.valid ? '#fff' : '#FFC7EE',
+  fontFamily: 'Cutive',
+  backgroundColor: props.valid ? '#000' : '#fff',
+  border: '1px solid #000',
+  color: props.valid ? '#fff' : '#000',
   fontSize: '1em',
   height: '1em',
   padding: '1.5em',
@@ -39,14 +39,15 @@ const FormInput = styled(Input)(props => ({
 
 const PayButton = styled.button(props => ({
   '&:hover': {
-    cursor: !props.disabled ? 'pointer' : 'not-allowed'
+    cursor: !props.disabled ? 'pointer' : 'not-allowed',
+    backgroundColor: !props.disabled ? '#fff' : '#808080',
+    color: !props.disabled ? '#000' : '#d3d3d3',
+    border: '1px solid #000'
   },
-  backgroundColor: '#f6a4eb',
-  border: '1px solid #2e6da4',
-  borderRadius: '4px',
-  boxShadow:
-    '0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #ffb9f6',
+  fontFamily: 'Cutive',
+  backgroundColor: '#000',
   color: 'white',
+  fontWeight: 'bold',
   fontSize: '1.1em',
   opacity: props.disabled ? 0.9 : 1,
   padding: '12px 48px',
@@ -147,8 +148,8 @@ const ErrorComponent = (props: {
       justifyContent="center"
       alignItems="center"
     >
-      <FaExclamationCircle color="white" />
-      <Text fontFamily="roboto" color="white" pl={2}>
+      <FaExclamationCircle color="black" />
+      <Text fontFamily="Cutive" color="black" pl={2}>
         {slugs[props.field]} is not valid
       </Text>
     </Flex>
@@ -170,7 +171,7 @@ const FormComponent = (props: InjectedProps & { className?: string }) => {
       className={props.className}
       flexWrap="wrap"
       mb={4}
-      bg="#6772e5"
+      bg="#fff"
       p={[3, 5] as any}
       justifyContent="center"
     >
