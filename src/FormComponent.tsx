@@ -25,7 +25,7 @@ const FormInput = styled(Input)(props => ({
     border: '0',
     padding: '0'
   },
-  fontFamily: 'Cutive',
+  fontFamily: 'cutive',
   backgroundColor: props.valid ? '#000' : '#fff',
   border: '1px solid #000',
   color: props.valid ? '#fff' : '#000',
@@ -42,7 +42,7 @@ const PayButton = styled.button(props => ({
     color: !props.disabled ? '#000' : '#d3d3d3',
     border: '1px solid #000'
   },
-  fontFamily: 'Cutive',
+  fontFamily: 'sans-serif',
   backgroundColor: '#000',
   color: 'white',
   fontWeight: 'bold',
@@ -147,7 +147,7 @@ const ErrorComponent = (props: {
       alignItems="center"
     >
       <FaExclamationCircle color="black" />
-      <Text fontFamily="Cutive" color="black" pl={2}>
+      <Text fontFamily="cutive" color="black" pl={2}>
         {slugs[props.field]} is not valid
       </Text>
     </Flex>
