@@ -11,12 +11,10 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { FormType, InjectedProps } from './FormContainer'
 import Input, { Props } from './Input'
 
-import cutiveMono from 'https://fonts.googleapis.com/css?family=Cutive+Mono'
-
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Cutive";
-    src: url(${cutiveMono})
+    src: url('https://fonts.googleapis.com/css?family=Cutive+Mono')
   }
 `
 const FormInput = styled(Input)(props => ({
