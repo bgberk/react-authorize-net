@@ -25,7 +25,7 @@ const FormInput = styled(Input)(props => ({
     border: '0',
     padding: '0'
   },
-  fontFamily: 'cutive',
+  fontFamily: 'monospace',
   backgroundColor: props.valid ? '#000' : '#fff',
   border: '1px solid #000',
   color: props.valid ? '#fff' : '#000',
@@ -43,13 +43,13 @@ const PayButton = styled.button(props => ({
     border: '1px solid #000'
   },
   fontFamily: 'sans-serif',
-  backgroundColor: '#000',
-  color: 'white',
+  backgroundColor: !props.disabled ? '#000' : '#808080',
+  color: !props.disabled ? 'white' : '#d3d3d3',
+  border: '0',
   fontWeight: 'bold',
   fontSize: '1.1em',
   opacity: props.disabled ? 0.9 : 1,
-  padding: '12px 48px',
-  width: '100%'
+  padding: '12px 48px'
 }))
 
 const CardNumber = ({
